@@ -3,7 +3,52 @@ guid: af00cfee44781a74493175dae6fe5389
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: c81f0cde5412f0443abc4b8eb6480020, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blk
+    second: {fileID: 2100000, guid: 3814940e1852da047bcf94407c4e4d71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: cbd238f0406ff5d4a95188a94b300409, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body dark
+    second: {fileID: 2100000, guid: 059d0105cb453d141a6e1f98ae4d8418, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cream
+    second: {fileID: 2100000, guid: 6fd43fa1bad16c643a4228d08ac13964, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: a3ab60ca1046a9442a87ed79afbbca4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: green
+    second: {fileID: 2100000, guid: 6f5f681815697e642ac1bc9691f9ab52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 7bf76253091a37649a0118d0222a9602, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white
+    second: {fileID: 2100000, guid: 69ac8e9b96974c54c93f3f5db8fd32fe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
