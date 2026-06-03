@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class ResizePlayer : MonoBehaviour
 {
     public ParticleSystem resizeEffect;
+    public AudioSource transformSound;
 
     bool isBig = false;
 
@@ -11,6 +12,9 @@ public class ResizePlayer : MonoBehaviour
     {
         if (resizeEffect != null)
             resizeEffect.Play();
+
+        if (transformSound != null)
+            transformSound.Play();
 
         if (isBig)
         {
