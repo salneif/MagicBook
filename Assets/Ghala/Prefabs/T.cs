@@ -13,10 +13,5 @@ public class T : MonoBehaviour
                 b.StartAttack();
             }
         }
-
-        if (other.CompareTag("Ball"))
-        {
-            Destroy(other.gameObject);
-        }
     }
 }
