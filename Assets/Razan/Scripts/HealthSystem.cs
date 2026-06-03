@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// 1. ﬂÊœ ≈⁄œ«œ«  ‘—Ìÿ «·ÕÌ«…
 [System.Serializable]
 public class HealthBarSettings
 {
@@ -23,7 +22,6 @@ public class HealthBarSettings
     }
 }
 
-// 2. ﬂÊœ «·‰Ÿ«„ Ê≈œ«—… «·’Õ… (‰›” «”„ „·›ﬂˆ  „«„«)
 public class HealthSystem : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -39,17 +37,11 @@ public class HealthSystem : MonoBehaviour
 
     void Update()
     {
-        // «÷€ÿÌ Õ—› G ›Ì «··⁄»… · Ã—»… ‰ﬁ’ «·’Õ…
-        //if (Input.GetKeyDown(KeyCode.G))
-        //{
-        //    TakeDamage(20);
-        //}
      
-            // «·ÿ—Ìﬁ… «·ÃœÌœ… ·· Õﬁﬁ „‰ ÷€ÿ “— G ›Ì «·ﬂÌ»Ê—œ
-            if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
-            {
-                TakeDamage(20);
-            }
+            // if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
+            // {
+            //     TakeDamage(20);
+            // }
         }
     
 
