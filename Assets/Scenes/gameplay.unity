@@ -188,13 +188,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552482095}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.043838736, y: -0.8194908, z: -0.5713749, w: 0.0066171116}
+  m_LocalRotation: {x: 0.01196019, y: -0.8205754, z: -0.57068616, w: 0.028815757}
   m_LocalPosition: {x: -2.47, y: 1.181, z: 1.135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -69.373, y: -170.038, z: -13.028}
+  m_LocalEulerAnglesHint: {x: -0.0000007022825, y: 359.6024, z: -0.00000004240218}
 --- !u!95 &552482098
 Animator:
   serializedVersion: 7
@@ -249,7 +249,7 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 3754781392404823324, guid: eccd495790eb8814faca50fcb246dc80, type: 2}
+  - key: {fileID: 8694771423427801440, guid: eccd495790eb8814faca50fcb246dc80, type: 2}
     value: {fileID: 552482098}
   m_ExposedReferences:
     m_References: []
@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: fefcc02f2671e304a9d5d694b05dc344, type: 2}
+    - target: {fileID: 65702495048144492, guid: c5f77a10277e1ba4eb325e81915fe621, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c5f77a10277e1ba4eb325e81915fe621, type: 3}
       propertyPath: m_Name
       value: Room
@@ -703,8 +707,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001763676}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04383871, y: 0.81949073, z: 0.57137495, w: -0.006617084}
-  m_LocalPosition: {x: -2.41109, y: 0.9779929, z: 0.57699645}
+  m_LocalRotation: {x: 0.01196019, y: -0.8205754, z: -0.57068616, w: 0.028815757}
+  m_LocalPosition: {x: -2.47, y: 1.181, z: 1.135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
