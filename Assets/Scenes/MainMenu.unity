@@ -481,6 +481,81 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &593970088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593970089}
+  - component: {fileID: 593970091}
+  - component: {fileID: 593970090}
+  m_Layer: 5
+  m_Name: ConfirmationImage (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &593970089
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593970088}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5541290016087759172}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -602.27, y: 95}
+  m_SizeDelta: {x: 181.318, y: 123.144}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &593970090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593970088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e9eb4ede2e240334fb67d318bb89de5f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &593970091
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593970088}
+  m_CullTransparentMesh: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,23 +634,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e2d5fda4dde0e448e7f8c81a789596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::menuController
-  volumeTextValue: {fileID: 0}
-  volumeSlider: {fileID: 0}
+  volumeTextValue: {fileID: 4894399818465331296}
+  volumeSlider: {fileID: 303730679358576242}
   defaultVolume: 1
-  ControllersenTextVale: {fileID: 0}
-  controllerSenSlider: {fileID: 0}
+  ControllersenTextVale: {fileID: 5546026216804951886}
+  controllerSenSlider: {fileID: 2001103556820359764}
   defaulSen: 4
   maincontrollerSen: 4
-  invertYToggle: {fileID: 0}
-  brightnessSlider: {fileID: 0}
-  brightnessTextValue: {fileID: 0}
+  invertYToggle: {fileID: 7955982778114955879}
+  brightnessSlider: {fileID: 8489914227980442246}
+  brightnessTextValue: {fileID: 2377098112698721217}
   defaultBrightness: 0.98
-  fullscreenToggle: {fileID: 0}
-  confirmationPrompt: {fileID: 0}
-  qualityDropdown: {fileID: 0}
+  fullscreenToggle: {fileID: 7405296727724366642}
+  confirmationPrompt: {fileID: 4167370003061734333}
+  qualityDropdown: {fileID: 8557373714160160051}
   newGameLevel: Level1
-  noSaveGameDialog: {fileID: 0}
-  resolutionDropdown: {fileID: 0}
+  noSaveGameDialog: {fileID: 548198129316427771}
+  resolutionDropdown: {fileID: 6808006357614308166}
 --- !u!4 &1255194266
 Transform:
   m_ObjectHideFlags: 0
@@ -803,15 +878,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoadPrefs
   canUse: 0
   menuController: {fileID: 1255194265}
-  volumeTextValue: {fileID: 0}
-  volumeSlider: {fileID: 0}
-  brightnessSlider: {fileID: 0}
-  brightnessTextValue: {fileID: 0}
-  qualityDropdown: {fileID: 0}
-  fullScreenToggle: {fileID: 0}
-  controllerSenTextValue: {fileID: 0}
-  controllerSenSlider: {fileID: 0}
-  invertYToggle: {fileID: 0}
+  volumeTextValue: {fileID: 4894399818465331296}
+  volumeSlider: {fileID: 303730679358576242}
+  brightnessSlider: {fileID: 8489914227980442246}
+  brightnessTextValue: {fileID: 2377098112698721217}
+  qualityDropdown: {fileID: 8557373714160160051}
+  fullScreenToggle: {fileID: 7405296727724366642}
+  controllerSenTextValue: {fileID: 5546026216804951886}
+  controllerSenSlider: {fileID: 2001103556820359764}
+  invertYToggle: {fileID: 7955982778114955879}
 --- !u!4 &1962426432
 Transform:
   m_ObjectHideFlags: 0
@@ -8024,6 +8099,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 593970089}
   - {fileID: 7174136799971674641}
   - {fileID: 8963959500450037947}
   - {fileID: 4056126405163564442}
