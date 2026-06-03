@@ -1,13 +1,38 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
-public class EndCutscene : MonoBehaviour
+public class TimelineController : MonoBehaviour
 {
-    public GameObject customCam;
-    public GameObject playerCam;
+    public PlayableDirector timelineDirector;
+    public GameObject playerObject; // ÈäÓÍÈ ãÌÓã ÇááÇÚÈ åäÇ ãÈÇÔÑÉ
 
-    public void EndScene()
+    private PlayerMovement playerScript;
+
+    void Start()
     {
-        customCam.SetActive(false);
-        playerCam.SetActive(true);
+        if (playerObject != null)
+        {
+            // ÈÌíÈ ÇáÓßÑÈÊ ãä ãÌÓã ÇááÇÚÈ ÊáŞÇÆíÇğ ÈÏæä áİ æÏæÑÇä
+            playerScript = playerObject.GetComponent<PlayerMovement>();
+
+            if (playerScript != null)
+            {
+                playerScript.enabled = false; // Øİí ÇáÊÍßã æŞÊ ÇáãÔåÏ
+            }
+        }
+
+        if (timelineDirector != null)
+        {
+            timelineDirector.stopped += OnTimelineEnded;
+        }
+    }
+
+    void OnTimelineEnded(PlayableDirector director)
+    {
+        if (playerScript != null)
+        {
+            playerScript.enabled = true; // ÔÛá ÇáÊÍßã Ãæá ãÇ íÎáÕ ÇáãÔåÏ
+            Debug.Log("ÇäÊåì ÇáãÔåÏ¡ ÇááÇÚÈ íÊÍÑß ÇáÂä!");
+        }
     }
 }
