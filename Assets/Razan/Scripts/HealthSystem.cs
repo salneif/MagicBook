@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// 1. ßæÏ ÅÚÏÇÏÇÊ ÔÑíØ ÇáÍíÇÉ
 [System.Serializable]
 public class HealthBarSettings
 {
@@ -23,7 +22,6 @@ public class HealthBarSettings
     }
 }
 
-// 2. ßæÏ ÇáäÙÇã æÅÏÇÑÉ ÇáÕÍÉ (äİÓ ÇÓã ãáİßö ÊãÇãÇğ)
 public class HealthSystem : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -39,28 +37,29 @@ public class HealthSystem : MonoBehaviour
 
     void Update()
     {
-        // ÇÖÛØí ÍÑİ G İí ÇááÚÈÉ áÊÌÑÈÉ äŞÕ ÇáÕÍÉ
-        //if (Input.GetKeyDown(KeyCode.G))
-        //{
-        //    TakeDamage(20);
-        //}
-     
-            // ÇáØÑíŞÉ ÇáÌÏíÏÉ ááÊÍŞŞ ãä ÖÛØ ÒÑ G İí ÇáßíÈæÑÏ
-            if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
-            {
-                TakeDamage(20);
-            }
+        if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            TakeDamage(20);
         }
-    
+    }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
         if (currentHealth < 0)
         {
             currentHealth = 0;
         }
 
         healthBar.SetHealth(currentHealth);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            TakeDamage(20);
+        }
     }
 }
