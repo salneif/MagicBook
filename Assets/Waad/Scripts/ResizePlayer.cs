@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ResizePlayer : MonoBehaviour
 {
@@ -6,23 +7,20 @@ public class ResizePlayer : MonoBehaviour
 
     bool isBig = false;
 
-    void Update()
+    public void OnResize()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (resizeEffect != null)
+            resizeEffect.Play();
+
+        if (isBig)
         {
-            if (resizeEffect != null)
-                resizeEffect.Play();
-
-            if (isBig)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-            }
-            else
-            {
-                transform.localScale = new Vector3(2, 2, 2);
-            }
-
-            isBig = !isBig;
+            transform.localScale = new Vector3(1, 1, 1);
         }
+        else
+        {
+            transform.localScale = new Vector3(2, 2, 2);
+        }
+
+        isBig = !isBig;
     }
 }
