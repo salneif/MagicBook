@@ -4,10 +4,11 @@ public class PuzzleManager : MonoBehaviour
 {
     public static PuzzleManager Instance { get; private set; }
 
+    [SerializeField] private Door door;
+    [SerializeField] private Plate[] plates;
+
     private int currentStep = 0;
     private bool isSolved = false;
-
-    [SerializeField] private Door door;
 
     private void Awake()
     {
@@ -21,19 +22,22 @@ public class PuzzleManager : MonoBehaviour
         if (plateOrder == currentStep + 1)
         {
             currentStep++;
+            plates[plateOrder - 1].SetLit(true);
             // Debug.Log("Step++");
 
             if (currentStep == 3)
             {
                 isSolved = true;
-                door.Open(); 
+                door.Open();
                 // Debug.Log("isSolved = True");
             }
         }
         else
         {
-            // Debug.Log("Wrong order. Reset");
+            foreach (var plate in plates)
+                plate.SetLit(false);
             currentStep = 0;
+            // Debug.Log("Wrong order. Reset");
         }
     }
 }
