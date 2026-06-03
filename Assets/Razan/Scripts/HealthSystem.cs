@@ -40,11 +40,18 @@ public class HealthSystem : MonoBehaviour
     void Update()
     {
         // «÷€ÿÌ Õ—› G ›Ì «··⁄»… · Ã—»… ‰ﬁ’ «·’Õ…
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            TakeDamage(20);
+        //if (Input.GetKeyDown(KeyCode.G))
+        //{
+        //    TakeDamage(20);
+        //}
+     
+            // «·ÿ—Ìﬁ… «·ÃœÌœ… ·· Õﬁﬁ „‰ ÷€ÿ “— G ›Ì «·ﬂÌ»Ê—œ
+            if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
+            {
+                TakeDamage(20);
+            }
         }
-    }
+    
 
     public void TakeDamage(int damage)
     {
