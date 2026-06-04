@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class Collectible : MonoBehaviour
 {
+    public bool growOnPickup = true;
+
     private bool playerInRange = false;
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +25,9 @@ public class Collectible : MonoBehaviour
         {
             Animator animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
             animator.SetTrigger("Pickup");
+
+            if (growOnPickup)
+                CollectibleManager.Instance.Collect();
 
             UnderBedZone zone = FindFirstObjectByType<UnderBedZone>();
 

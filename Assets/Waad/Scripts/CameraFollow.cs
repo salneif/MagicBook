@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
     public float mouseSensitivity = 3f;
 
     float yaw = 0f;
+    float pitch = 15f;
 
     void Start()
     {
@@ -18,7 +19,10 @@ public class CameraFollow : MonoBehaviour
     {
         yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
 
-        Quaternion rotation = Quaternion.Euler(0, yaw, 0);
+        pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+        pitch = Mathf.Clamp(pitch, -20f, 60f);
+
+        Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
 
         float playerSize = target.localScale.y;
 
