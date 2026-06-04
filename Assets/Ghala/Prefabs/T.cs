@@ -14,6 +14,11 @@ public class T : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+            
             foreach (Ball b in balls)
             {
                 b.StartAttack();

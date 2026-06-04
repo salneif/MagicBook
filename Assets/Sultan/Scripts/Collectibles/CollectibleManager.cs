@@ -14,9 +14,15 @@ public class CollectibleManager : MonoBehaviour
     [SerializeField] private GameObject objectToHide;
     [SerializeField] private GameObject objectToTransit;
     [SerializeField] private string SceneToLoad;
+    [SerializeField] private AudioSource audioSource;
 
     private int collectedCount = 0;
     private bool collectedThisFrame = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -34,6 +40,12 @@ public class CollectibleManager : MonoBehaviour
         collectedThisFrame = true;
 
         collectedCount++;
+        
+        if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
         // player.localScale += Vector3.one * scaleIncrease;
         player.localScale *= scaleIncrease;
         Debug.Log($"Player scale is now: {player.localScale}");
