@@ -37,22 +37,29 @@ public class HealthSystem : MonoBehaviour
 
     void Update()
     {
-     
-            // if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
-            // {
-            //     TakeDamage(20);
-            // }
+        if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            TakeDamage(20);
         }
-    
+    }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
         if (currentHealth < 0)
         {
             currentHealth = 0;
         }
 
         healthBar.SetHealth(currentHealth);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            TakeDamage(20);
+        }
     }
 }
