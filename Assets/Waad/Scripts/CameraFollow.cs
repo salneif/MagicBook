@@ -20,8 +20,14 @@ public class CameraFollow : MonoBehaviour
 
         Quaternion rotation = Quaternion.Euler(0, yaw, 0);
 
-        transform.position = target.position + rotation * offset;
+        float playerSize = target.localScale.y;
 
-        transform.LookAt(target.position + Vector3.up);
+        Vector3 dynamicOffset = offset;
+        dynamicOffset.y += (playerSize - 1f) * 2f;
+        dynamicOffset.z -= (playerSize - 1f) * 1.5f;
+
+        transform.position = target.position + rotation * dynamicOffset;
+
+        transform.LookAt(target.position + Vector3.up * playerSize);
     }
 }

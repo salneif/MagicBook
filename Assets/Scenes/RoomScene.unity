@@ -171,6 +171,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6021834353746174925, guid: a5df7a1b4b786ef498eb53ae6aa5985e, type: 3}
+      propertyPath: size1.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021834353746174925, guid: a5df7a1b4b786ef498eb53ae6aa5985e, type: 3}
+      propertyPath: size1.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021834353746174925, guid: a5df7a1b4b786ef498eb53ae6aa5985e, type: 3}
+      propertyPath: size1.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -635,8 +647,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 681517645}
-  offset: {x: 0, y: 1.6, z: -3.71}
+  offset: {x: 0, y: -0.65, z: -6.9}
   mouseSensitivity: 3
+--- !u!1 &293014140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293014143}
+  - component: {fileID: 293014142}
+  - component: {fileID: 293014141}
+  m_Layer: 0
+  m_Name: UnderBedZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &293014141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293014140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12238dc83dd4a9e49bd4b7140bed7e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnderBedZone
+--- !u!65 &293014142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293014140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.6885223, y: 1, z: 11.807121}
+  m_Center: {x: -2.3442612, y: 0.00000011777537, z: -1.611416}
+--- !u!4 &293014143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293014140}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.016230889, y: 0, z: 0, w: 0.9998683}
+  m_LocalPosition: {x: 2833.2046, y: 1.21731, z: 1592.8982}
+  m_LocalScale: {x: 3.2, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 1.86, y: 0, z: 0}
 --- !u!1001 &356935983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1605,7 +1683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67cec9304a24446a4afc6ad81d78359f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleManager
-  player: {fileID: 0}
+  player: {fileID: 1634317230}
   boxRelease: {fileID: 1974315659}
   scaleIncrease: 0.2
   boxTriggerCount: 2
@@ -2119,7 +2197,7 @@ PrefabInstance:
     - target: {fileID: 8933100300255195951, guid: 6782216b569744e8098a82417c87eeb3, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1634317230}
     - target: {fileID: 9175885564451549171, guid: 6782216b569744e8098a82417c87eeb3, type: 3}
       propertyPath: m_Name
       value: set_new
@@ -2160,3 +2238,4 @@ SceneRoots:
   - {fileID: 2545095455325015811}
   - {fileID: 1489199630}
   - {fileID: 61356647}
+  - {fileID: 293014143}

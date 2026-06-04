@@ -19,11 +19,16 @@ public class Collectible : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
-
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            CollectibleManager.Instance.Collect();
+            Animator animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+            animator.SetTrigger("Pickup");
+
+            UnderBedZone zone = FindFirstObjectByType<UnderBedZone>();
+
+            if (zone != null)
+                zone.PotionCollected();
+
             Destroy(gameObject);
         }
     }
