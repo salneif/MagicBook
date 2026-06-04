@@ -6021,6 +6021,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1357109745}
     - target: {fileID: 3576344067080235587, guid: 6782216b569744e8098a82417c87eeb3, type: 3}
+      propertyPath: m_text
+      value: "\u25CF   \u25B2   \u25A0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576344067080235587, guid: 6782216b569744e8098a82417c87eeb3, type: 3}
       propertyPath: m_margin.x
       value: 5.4648094
       objectReference: {fileID: 0}
