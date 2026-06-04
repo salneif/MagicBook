@@ -28,18 +28,18 @@ public class Ball : MonoBehaviour
         attack = true;
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            HealthSystem playerHealth =
-                other.gameObject.GetComponent<HealthSystem>();
+    // private void OnCollisionEnter(Collision other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //     {
+    //         HealthSystem playerHealth =
+    //             other.gameObject.GetComponent<HealthSystem>();
 
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(20);
-                Debug.Log(playerHealth.currentHealth);
-            }
-        }
-    }
+    //         if (playerHealth != null)
+    //         {
+    //             playerHealth.TakeDamage(20);
+    //             Debug.Log(playerHealth.currentHealth);
+    //         }
+    //     }
+    // }
 }

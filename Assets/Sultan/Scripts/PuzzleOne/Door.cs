@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private float moveDistance = 1.5f;
+    [SerializeField] private float moveDistance = 4f;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private AudioSource audioSource;
 

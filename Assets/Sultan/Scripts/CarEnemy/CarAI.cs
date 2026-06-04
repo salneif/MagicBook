@@ -8,7 +8,7 @@ public class CarAI : MonoBehaviour
     [SerializeField] private HealthSystem playerHealth;
     [SerializeField] private float detectionRadius = 10f;
     [SerializeField] private float loseRadius = 15f;
-    [SerializeField] private float damageRadius = 1.5f;
+    [SerializeField] private float damageRadius = 3f;
     [SerializeField] private int damageAmount = 10;
     [SerializeField] private float backupDistance = 2f;
     [SerializeField] private float backupDuration = 0.5f;

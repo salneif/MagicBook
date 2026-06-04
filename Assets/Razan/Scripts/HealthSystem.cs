@@ -26,8 +26,8 @@ public class HealthSystem : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-
     public HealthBarSettings healthBar;
+    [SerializeField] private GameObject restartCanvas;
 
     void Start()
     {
@@ -37,10 +37,10 @@ public class HealthSystem : MonoBehaviour
 
     void Update()
     {
-        if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
-        {
-            TakeDamage(20);
-        }
+        // if (UnityEngine.InputSystem.Keyboard.current.gKey.wasPressedThisFrame)
+        // {
+        //     TakeDamage(20);
+        // }//
     }
 
     public void TakeDamage(int damage)
@@ -53,13 +53,22 @@ public class HealthSystem : MonoBehaviour
         }
 
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            restartCanvas.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Ball"))
         {
-            TakeDamage(20);
+            TakeDamage(15);
         }
+        // Debug.Log(currentHealth);
     }
 }
