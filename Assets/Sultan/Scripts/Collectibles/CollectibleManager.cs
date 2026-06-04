@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CollectibleManager : MonoBehaviour
 {
@@ -10,9 +12,17 @@ public class CollectibleManager : MonoBehaviour
     [SerializeField] private float scaleIncrease = 2f;
     [SerializeField] private int boxTriggerCount = 2;
     [SerializeField] private GameObject objectToHide;
+    [SerializeField] private GameObject objectToTransit;
+    [SerializeField] private string SceneToLoad;
+    [SerializeField] private AudioSource audioSource;
 
     private int collectedCount = 0;
     private bool collectedThisFrame = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -24,12 +34,18 @@ public class CollectibleManager : MonoBehaviour
         collectedThisFrame = false;
     }
 
-    public void Collect()
+    public void Collect(GameObject collectible)
     {
         if (collectedThisFrame) return;
         collectedThisFrame = true;
 
         collectedCount++;
+        
+        if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
         // player.localScale += Vector3.one * scaleIncrease;
         player.localScale *= scaleIncrease;
         Debug.Log($"Player scale is now: {player.localScale}");
@@ -46,5 +62,11 @@ public class CollectibleManager : MonoBehaviour
             if (hiddenCollectible != null)
                 hiddenCollectible.SetActive(true);
         }
+
+        if(objectToTransit != null && objectToTransit==collectible)
+        {
+            SceneManager.LoadScene(SceneToLoad);
+        }
+
     }
 }
