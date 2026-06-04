@@ -32,12 +32,12 @@ public class PickupItem : MonoBehaviour
 
     IEnumerator Pickup()
     {
-        animator.SetBool("Pickup", true);
+        animator.SetTrigger("Pickup");
 
         yield return new WaitForSeconds(1f);
 
-        gameObject.SetActive(false);
+        CollectibleManager.Instance.Collect();
 
-        animator.SetBool("Pickup", false);
+        gameObject.SetActive(false);
     }
 }

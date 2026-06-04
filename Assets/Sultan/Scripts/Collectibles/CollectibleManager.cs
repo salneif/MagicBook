@@ -6,7 +6,7 @@ public class CollectibleManager : MonoBehaviour
 {
     public static CollectibleManager Instance { get; private set; }
 
-    [SerializeField] private Transform player;
+    [SerializeField] private ResizePlayer resizePlayer;
     [SerializeField] private BoxRelease boxRelease;
     [SerializeField] private GameObject hiddenCollectible;
     [SerializeField] private float scaleIncrease = 2f;
@@ -40,15 +40,18 @@ public class CollectibleManager : MonoBehaviour
         collectedThisFrame = true;
 
         collectedCount++;
-        
-        if (audioSource != null)
+
+        if (resizePlayer != null)
+        {
+            if (audioSource != null)
             {
                 audioSource.Play();
             }
 
-        // player.localScale += Vector3.one * scaleIncrease;
-        player.localScale *= scaleIncrease;
-        Debug.Log($"Player scale is now: {player.localScale}");
+            resizePlayer.Grow();
+        }
+
+
         Debug.Log($"Collected: {collectedCount}");
 
         if (collectedCount == 1 && objectToHide != null)
