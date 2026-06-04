@@ -648,7 +648,7 @@ MonoBehaviour:
   fullscreenToggle: {fileID: 7405296727724366642}
   confirmationPrompt: {fileID: 4167370003061734333}
   qualityDropdown: {fileID: 8557373714160160051}
-  newGameLevel: RoomScene
+  newGameLevel: gameplay
   noSaveGameDialog: {fileID: 548198129316427771}
   resolutionDropdown: {fileID: 6808006357614308166}
 --- !u!4 &1255194266

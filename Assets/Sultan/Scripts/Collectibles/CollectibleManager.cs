@@ -15,6 +15,7 @@ public class CollectibleManager : MonoBehaviour
     [SerializeField] private GameObject objectToTransit;
     [SerializeField] private string SceneToLoad;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private GameObject secondObjectToHide;
 
     private int collectedCount = 0;
     private bool collectedThisFrame = false;
@@ -40,7 +41,7 @@ public class CollectibleManager : MonoBehaviour
         collectedThisFrame = true;
 
         collectedCount++;
-        
+
         if (audioSource != null)
             {
                 audioSource.Play();
@@ -65,6 +66,7 @@ public class CollectibleManager : MonoBehaviour
 
         if(objectToTransit != null && objectToTransit==collectible)
         {
+            secondObjectToHide.SetActive(false);
             SceneManager.LoadScene(SceneToLoad);
         }
 

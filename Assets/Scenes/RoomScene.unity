@@ -1362,6 +1362,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370016576}
   m_CullTransparentMesh: 1
+--- !u!1 &402605661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6808833079701073737, guid: 6782216b569744e8098a82417c87eeb3, type: 3}
+  m_PrefabInstance: {fileID: 2545095455325015811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &486542224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4109,9 +4114,10 @@ MonoBehaviour:
   scaleIncrease: 2
   boxTriggerCount: 2
   objectToHide: {fileID: 865780301}
-  objectToTransit: {fileID: 2121144087}
-  SceneToLoad: 
+  objectToTransit: {fileID: 1269207058}
+  SceneToLoad: MainMenu
   audioSource: {fileID: 1489199631}
+  secondObjectToHide: {fileID: 402605661}
 --- !u!4 &1489199630
 Transform:
   m_ObjectHideFlags: 0
