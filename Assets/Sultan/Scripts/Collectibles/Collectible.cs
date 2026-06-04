@@ -45,7 +45,7 @@ public class Collectible : MonoBehaviour
             animator.SetTrigger("Pickup");
 
             if (growOnPickup)
-                CollectibleManager.Instance.Collect();
+                CollectibleManager.Instance.Collect(gameObject);
 
             UnderBedZone zone = FindFirstObjectByType<UnderBedZone>();
 

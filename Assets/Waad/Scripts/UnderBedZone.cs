@@ -13,7 +13,7 @@ public class UnderBedZone : MonoBehaviour
     {
         if (other.CompareTag("Player") && potionCollected)
         {
-            CollectibleManager.Instance.Collect();
+            CollectibleManager.Instance.Collect(gameObject);
             potionCollected = false;
         }
     }

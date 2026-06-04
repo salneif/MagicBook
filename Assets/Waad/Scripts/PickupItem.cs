@@ -36,7 +36,7 @@ public class PickupItem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        CollectibleManager.Instance.Collect();
+        CollectibleManager.Instance.Collect(gameObject);
 
         gameObject.SetActive(false);
     }
