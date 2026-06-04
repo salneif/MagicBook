@@ -11315,7 +11315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31c80f8855ce9642a5fbf49c2174a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicBookTeleport
-  targetSceneName: Scene_2
+  targetSceneName: RoomScene
   interactKey: 101
   fadeSpeed: 1
   fadeImage: {fileID: 141463599}
