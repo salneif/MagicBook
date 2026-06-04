@@ -45,6 +45,7 @@ public class HealthSystem : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log(damage);
         currentHealth -= damage;
 
         if (currentHealth < 0)
