@@ -16,6 +16,7 @@ public class CarAI : MonoBehaviour
     [SerializeField] private float patrolRadius = 8f;
     [SerializeField] private int waypointCount = 6;
     [SerializeField] private float waypointReachDistance = 1.5f;
+    [SerializeField] private AudioSource audioSource;
 
     private enum State { Dormant, Patrol, Chase, Hunt }
     private State state = State.Dormant;
@@ -24,6 +25,11 @@ public class CarAI : MonoBehaviour
     private Vector3[] waypoints;
     private int currentWaypoint = 0;
     private bool isAttacking = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -35,6 +41,12 @@ public class CarAI : MonoBehaviour
     {
         transform.SetParent(null);
         agent.enabled = true;
+
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+
         BuildWaypoints(transform.position);
         state = State.Patrol;
     }
