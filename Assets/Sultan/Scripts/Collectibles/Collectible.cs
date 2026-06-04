@@ -23,7 +23,7 @@ public class Collectible : MonoBehaviour
 
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            CollectibleManager.Instance.Collect();
+            CollectibleManager.Instance.Collect(gameObject);
             Destroy(gameObject);
         }
     }
