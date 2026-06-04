@@ -210,5 +210,10 @@ namespace Supercyan.FreeSample
                 m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
             }
         }
+
+        public void SetJumpForce(float force)
+        {
+            m_jumpForce = force;
+        }
     }
 }

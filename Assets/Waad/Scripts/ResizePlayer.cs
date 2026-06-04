@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Supercyan.FreeSample;
 public class ResizePlayer : MonoBehaviour
 {
     public ParticleSystem resizeEffect;
@@ -9,6 +9,8 @@ public class ResizePlayer : MonoBehaviour
     public Vector3 size2 = new Vector3(1.3f, 1.3f, 1.3f);
     public Vector3 size3 = new Vector3(1.7f, 1.7f, 1.7f);
     public Vector3 size4 = new Vector3(2.2f, 2.2f, 2.2f);
+    [SerializeField] private SimpleSampleCharacterControl characterControl;
+    [SerializeField] private float size4JumpForce = 10f;     
 
     private int currentSize = 0;
 
@@ -34,6 +36,10 @@ public class ResizePlayer : MonoBehaviour
         else if (currentSize >= 3)
         {
             transform.localScale = size4;
+            if (characterControl != null)
+            {
+                characterControl.SetJumpForce(size4JumpForce);
+            }
         }
 
         if (resizeEffect != null)
