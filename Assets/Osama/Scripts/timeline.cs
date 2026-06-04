@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 public class TimelineController : MonoBehaviour
 {
     public PlayableDirector timelineDirector;
-    public GameObject playerObject; // ÈäÓÍÈ ãÌÓã ÇááÇÚÈ åäÇ ãÈÇÔÑÉ
+    public GameObject playerObject; 
 
     private PlayerMovement playerScript;
 
@@ -12,12 +12,12 @@ public class TimelineController : MonoBehaviour
     {
         if (playerObject != null)
         {
-            // ÈÌíÈ ÇáÓßÑÈÊ ãä ãÌÓã ÇááÇÚÈ ÊáŞÇÆíÇğ ÈÏæä áİ æÏæÑÇä
+            
             playerScript = playerObject.GetComponent<PlayerMovement>();
 
             if (playerScript != null)
             {
-                playerScript.enabled = false; // Øİí ÇáÊÍßã æŞÊ ÇáãÔåÏ
+                playerScript.enabled = false; 
             }
         }
 
@@ -31,8 +31,8 @@ public class TimelineController : MonoBehaviour
     {
         if (playerScript != null)
         {
-            playerScript.enabled = true; // ÔÛá ÇáÊÍßã Ãæá ãÇ íÎáÕ ÇáãÔåÏ
-            Debug.Log("ÇäÊåì ÇáãÔåÏ¡ ÇááÇÚÈ íÊÍÑß ÇáÂä!");
+            playerScript.enabled = true; 
+            
         }
     }
 }
