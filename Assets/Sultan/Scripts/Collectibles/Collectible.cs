@@ -1,22 +1,40 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class Collectible : MonoBehaviour
 {
     public bool growOnPickup = true;
+    public GameObject pressEText;
 
     private bool playerInRange = false;
+
+    private void Start()
+    {
+        if (pressEText != null)
+            pressEText.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             playerInRange = true;
+
+            if (pressEText != null)
+                pressEText.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             playerInRange = false;
+
+            if (pressEText != null)
+                pressEText.SetActive(false);
+        }
     }
 
     private void Update()
@@ -33,6 +51,9 @@ public class Collectible : MonoBehaviour
 
             if (zone != null)
                 zone.PotionCollected();
+
+            if (pressEText != null)
+                pressEText.SetActive(false);
 
             Destroy(gameObject);
         }
