@@ -223,5 +223,11 @@ namespace Supercyan.FreeSample
         {
             m_jumpForce = force;
         }
+        
+        public void StopAllSounds()
+        {
+            if (walkSound != null && walkSound.isPlaying) walkSound.Stop();
+            if (jumpSound != null && jumpSound.isPlaying) jumpSound.Stop();
+        }
     }
 }
