@@ -45,6 +45,7 @@ public class Collectible : MonoBehaviour
             if (animator != null)
                 animator.SetTrigger("Pickup");
 
+            CollectibleManager.Instance.PlayPickupSound();
             UnderBedZone zone = FindFirstObjectByType<UnderBedZone>();
 
             if (zone != null && zone.PlayerInZone)
