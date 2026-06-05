@@ -124,6 +124,15 @@ public class CarAI : MonoBehaviour
         playerHealth.TakeDamage(damageAmount);
         Debug.Log(playerHealth.currentHealth);
 
+        if (playerHealth.currentHealth <= 0)
+        {
+            audioSource.Stop();
+            state = State.Dormant;
+            agent.SetDestination(transform.position);
+            isAttacking = false;
+            yield break;
+        }
+        
         Vector3 backupDir = (transform.position - player.position).normalized;
         Vector3 backupTarget = transform.position + backupDir * backupDistance;
 
