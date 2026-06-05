@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// Â–« «·”ÿ— «·”Õ—Ì »ÌÃ»— ÌÊ‰Ì Ì Ì÷Ì› Character Controller  ·ﬁ«∆Ì« ·Ê ﬂ«‰ ‰«ﬁ’!
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -9,33 +11,31 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSensitivity = 2f;
     public Transform cameraTransform;
 
-    [Header("Animation")]
-    public Animator animator;
-
     private float xRotation = 0f;
+    private CharacterController controller;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        controller = GetComponent<CharacterController>();
     }
 
     void OnEnable()
     {
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
-
         if (cameraTransform != null)
         {
             xRotation = cameraTransform.localEulerAngles.x;
-
-            if (xRotation > 180f)
-                xRotation -= 360f;
+            if (xRotation > 180f) xRotation -= 360f;
         }
     }
 
     void Update()
     {
+        // ‰„‰⁄ «·ﬂ»”Ê·… „‰ «·„Ì·«‰
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 
+        // --- ‰Ÿ«„ «·«· ›«  ---
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX);
 
+        // --- ‰Ÿ«„ «·„‘Ì ---
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -62,10 +63,10 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 moveDirection = (right * x) + (forward * z);
 
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
-
-        // Animation
-        float speed = moveDirection.magnitude;
-        animator.SetFloat("speed", speed);
+        //  ÿ»Ìﬁ «·Õ—ﬂ…
+        if (controller != null)
+        {
+            controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+        }
     }
 }
