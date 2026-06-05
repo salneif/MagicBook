@@ -4604,6 +4604,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1833983119}
+    - target: {fileID: 171868142177567641, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 299671209578590732, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4624,6 +4628,18 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 544025779}
+    - target: {fileID: 577932483463819771, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 577932483463819771, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 577932483463819771, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1070446626254237741, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
       propertyPath: m_Volume
       value: 1
@@ -4680,6 +4696,22 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1360508908}
+    - target: {fileID: 3024350682756388801, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.x
+      value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024350682756388801, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024350682756388801, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.z
+      value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024350682756388801, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Center.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3197008920694563790, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4692,6 +4724,18 @@ PrefabInstance:
       propertyPath: pressEText
       value: 
       objectReference: {fileID: 1163793301}
+    - target: {fileID: 3625042283969496055, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625042283969496055, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625042283969496055, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4087025309210549123, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
       propertyPath: pressEText
       value: 
@@ -4703,6 +4747,18 @@ PrefabInstance:
     - target: {fileID: 4379095475964212503, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
       propertyPath: m_Name
       value: set_new (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460136237965575049, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460136237965575049, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460136237965575049, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_Size.z
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4722698263106391968, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4767,6 +4823,10 @@ PrefabInstance:
     - target: {fileID: 5189472298157418109, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.258
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930348212637249766, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
+      propertyPath: m_text
+      value: "\u25CF   \u25B2   \u25A0\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6208707410100531759, guid: af462e3bb48f34545a6749c99e5d7835, type: 3}
       propertyPath: m_LocalPosition.z
