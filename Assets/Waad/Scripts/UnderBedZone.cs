@@ -2,19 +2,28 @@ using UnityEngine;
 
 public class UnderBedZone : MonoBehaviour
 {
-    private bool potionCollected = false;
+    public bool PlayerInZone { get; private set; }
+    private int pendingGrows = 0;
 
-    public void PotionCollected()
+    private void OnTriggerEnter(Collider other)
     {
-        potionCollected = true;
+        if (other.CompareTag("Player"))
+            PlayerInZone = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && potionCollected)
+        if (other.CompareTag("Player"))
         {
-            CollectibleManager.Instance.Collect(gameObject);
-            potionCollected = false;
+            PlayerInZone = false;
+            for (int i = 0; i < pendingGrows; i++)
+                CollectibleManager.Instance.Collect(null);
+            pendingGrows = 0;
         }
+    }
+
+    public void PotionCollected()
+    {
+        pendingGrows++;
     }
 }
