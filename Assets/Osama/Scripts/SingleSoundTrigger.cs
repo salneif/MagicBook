@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SingleSoundTrigger : MonoBehaviour
 {
-    [Header("«”Õ» „·› «·’Ê  Õﬁ Â–« «·’‰œÊﬁ Â‰«")]
+    
     public AudioClip mySound;
 
     void OnTriggerEnter(Collider other)
