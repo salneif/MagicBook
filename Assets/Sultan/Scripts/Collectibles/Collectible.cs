@@ -42,16 +42,15 @@ public class Collectible : MonoBehaviour
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
             Animator animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-            if (animator != null)
-                animator.SetTrigger("Pickup");
+            animator.SetTrigger("Pickup");
 
-            CollectibleManager.Instance.PlayPickupSound();
+            if (growOnPickup)
+                CollectibleManager.Instance.Collect(gameObject);
+
             UnderBedZone zone = FindFirstObjectByType<UnderBedZone>();
 
-            if (zone != null && zone.PlayerInZone)
-                zone.PotionCollected();          // in zone → delay grow until exit
-            else
-                CollectibleManager.Instance.Collect(gameObject); // outside → grow now
+            if (zone != null)
+                zone.PotionCollected();
 
             if (pressEText != null)
                 pressEText.SetActive(false);

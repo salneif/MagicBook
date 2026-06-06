@@ -25,9 +25,6 @@ namespace Supercyan.FreeSample
         [SerializeField] private Rigidbody m_rigidBody = null;
 
         [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
-        [SerializeField] private AudioSource walkSound;
-        [SerializeField] private AudioSource jumpSound;
-        private bool wasMoving = false;
 
         private float m_currentV = 0;
         private float m_currentH = 0;
@@ -147,21 +144,22 @@ namespace Supercyan.FreeSample
 
             bool walk = Input.GetKey(KeyCode.LeftShift);
 
-            if (v < 0) { v *= walk ? m_backwardsWalkScale : m_backwardRunScale; }
-            else if (walk) { v *= m_walkScale; }
+            if (v < 0)
+            {
+                if (walk) { v *= m_backwardsWalkScale; }
+                else { v *= m_backwardRunScale; }
+            }
+            else if (walk)
+            {
+                v *= m_walkScale;
+            }
 
             m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
             m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
 
-            bool isMoving = Mathf.Abs(m_currentV) > 0.1f;
-            bool isSoundMoving = Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.1f || Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.1f;
-
-            if (isSoundMoving && !wasMoving && walkSound != null) walkSound.Play();
-            else if (!isSoundMoving && wasMoving && walkSound != null) walkSound.Stop();
-            wasMoving = isSoundMoving;
-
             transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
             transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
+
             m_animator.SetFloat("MoveSpeed", m_currentV);
 
             JumpingAndLanding();
@@ -189,18 +187,13 @@ namespace Supercyan.FreeSample
             direction.y = 0;
             direction = direction.normalized * directionLength;
 
-            bool isMoving = direction.magnitude > 0.1f;
-            bool isSoundMoving = Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.1f || Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.1f;
-
-            if (isSoundMoving && !wasMoving && walkSound != null) walkSound.Play();
-            else if (!isSoundMoving && wasMoving && walkSound != null) walkSound.Stop();
-            wasMoving = isSoundMoving;
-
-            if (isMoving)
+            if (direction != Vector3.zero)
             {
                 m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
+
                 transform.rotation = Quaternion.LookRotation(m_currentDirection);
                 transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
+
                 m_animator.SetFloat("MoveSpeed", direction.magnitude);
             }
 
@@ -215,19 +208,12 @@ namespace Supercyan.FreeSample
             {
                 m_jumpTimeStamp = Time.time;
                 m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
-                if (jumpSound != null) jumpSound.Play();
             }
         }
 
         public void SetJumpForce(float force)
         {
             m_jumpForce = force;
-        }
-        
-        public void StopAllSounds()
-        {
-            if (walkSound != null && walkSound.isPlaying) walkSound.Stop();
-            if (jumpSound != null && jumpSound.isPlaying) jumpSound.Stop();
         }
     }
 }

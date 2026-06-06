@@ -35,12 +35,6 @@ public class CollectibleManager : MonoBehaviour
         collectedThisFrame = false;
     }
 
-    public void PlayPickupSound()
-    {
-        if (audioSource != null)
-            audioSource.Play();
-    }
-
     public void Collect(GameObject collectible)
     {
         if (collectedThisFrame) return;
@@ -50,10 +44,10 @@ public class CollectibleManager : MonoBehaviour
 
         if (resizePlayer != null)
         {
-            // if (audioSource != null)
-            // {
-            //     audioSource.Play();
-            // }
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
             resizePlayer.Grow();
         }
 

@@ -4,8 +4,6 @@ public class T : MonoBehaviour
 {
     public Ball[] balls;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private GameObject trigger;
-    
 
     private void Start()
     {
@@ -20,15 +18,10 @@ public class T : MonoBehaviour
             {
                 audioSource.Play();
             }
-
+            
             foreach (Ball b in balls)
             {
                 b.StartAttack();
-            }
-
-            if (trigger != null)
-            {
-                trigger.SetActive(false);
             }
         }
     }
