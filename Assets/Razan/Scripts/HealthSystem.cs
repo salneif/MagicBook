@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Supercyan.FreeSample;
 
 [System.Serializable]
 public class HealthBarSettings
@@ -57,6 +58,7 @@ public class HealthSystem : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            GetComponent<SimpleSampleCharacterControl>()?.StopAllSounds();
             restartCanvas.SetActive(true);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
@@ -68,8 +70,7 @@ public class HealthSystem : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ball"))
         {
-            TakeDamage(15);
+            TakeDamage(20);
         }
-        // Debug.Log(currentHealth);
     }
 }
