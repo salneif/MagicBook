@@ -2,24 +2,24 @@ using UnityEngine;
 
 public class SingleSoundTrigger : MonoBehaviour
 {
-    
     public AudioClip mySound;
 
     void OnTriggerEnter(Collider other)
     {
-        
         if (other.name == "pl" || other.CompareTag("Player"))
         {
             
-            AudioSource source = gameObject.GetComponent<AudioSource>();
-            if (source == null)
+            AudioSource playerSource = other.GetComponent<AudioSource>();
+
+            if (playerSource == null)
             {
-                source = gameObject.AddComponent<AudioSource>();
+                playerSource = other.gameObject.AddComponent<AudioSource>();
             }
 
-            source.clip = mySound;
-            source.spatialBlend = 0f; 
-            source.Play();
+            
+            playerSource.clip = mySound;
+            playerSource.spatialBlend = 0f;
+            playerSource.Play();
 
             
             GetComponent<Collider>().enabled = false;
