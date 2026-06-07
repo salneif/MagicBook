@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Collections;
 
 public class CollectibleManager : MonoBehaviour
 {
@@ -16,7 +16,10 @@ public class CollectibleManager : MonoBehaviour
     [SerializeField] private string SceneToLoad;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private GameObject secondObjectToHide;
-
+    // [SerializeField] private GameObject transitionCanvas;
+    [SerializeField] private GameObject transitionImage; 
+    [SerializeField] private GameObject transitionImage2;
+    [SerializeField] private float transitionDelay = 20f; 
     private int collectedCount = 0;
     private bool collectedThisFrame = false;
 
@@ -75,8 +78,22 @@ public class CollectibleManager : MonoBehaviour
         if(objectToTransit != null && objectToTransit==collectible)
         {
             secondObjectToHide.SetActive(false);
-            SceneManager.LoadScene(SceneToLoad);
+            // SceneManager.LoadScene(SceneToLoad);
+            StartCoroutine(TransitionToScene());
         }
 
+    }
+
+    private IEnumerator TransitionToScene()
+    {
+        if (transitionImage != null)
+            transitionImage.SetActive(true);
+
+        if (transitionImage2 != null)
+            transitionImage2.SetActive(true); // ADD
+
+        yield return new WaitForSeconds(transitionDelay);
+
+        SceneManager.LoadScene(SceneToLoad);
     }
 }

@@ -49,9 +49,9 @@ public class Collectible : MonoBehaviour
             UnderBedZone zone = FindFirstObjectByType<UnderBedZone>();
 
             if (zone != null && zone.PlayerInZone)
-                zone.PotionCollected();          // in zone → delay grow until exit
+                zone.PotionCollected();         
             else
-                CollectibleManager.Instance.Collect(gameObject); // outside → grow now
+                CollectibleManager.Instance.Collect(gameObject); 
 
             if (pressEText != null)
                 pressEText.SetActive(false);
